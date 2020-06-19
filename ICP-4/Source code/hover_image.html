@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head element starts here-->
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Gallery</title>
+    <link href="hover_image.css" rel="stylesheet">
+    <script src="hover_image.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'> </script>
+    <!-- Adding background image of the page-->
+    <style>
+        body{
+            background-image: url('https://i.stack.imgur.com/99BJx.jpg') ;
+        }
+    </style>
+
+</head>
+<!-- head element ends here-->
+<!--Content of the page starts here-->
+<body>
+<!--Adding div tag-->
+<div style="color: white" id="image">
+    Hover over one of the image below to display here.
+</div>
+<!--Adding images-->
+<img alt="Batter is ready" class="preview" id="img1"
+     onmouseout="unDo()"
+     onmouseover="upDate(this)"
+     src="https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-7.jpg">
+
+<img alt="Perfect Baking" class="preview" id="img2"
+     onmouseout="unDo()"
+     onmouseover="upDate(this)"
+     src="https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-6.jpg">
+
+<img alt="The best Cup Cake " class="preview" id="img3"
+     onmouseout="unDo()"
+     onmouseover="upDate(this)"
+     src="https://cdn.sallysbakingaddiction.com/wp-content/uploads/2017/06/moist-chocolate-cupcakes-5.jpg">
+</body>
+<!--content of the page ends here-->
+</html>
