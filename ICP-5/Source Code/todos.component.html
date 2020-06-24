@@ -1,0 +1,69 @@
+<!-- declaring the document type -->
+<!DOCTYPE html>
+<!-- Language for the document -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-image: url('https://image.freepik.com/free-photo/dark-blue-product-background_53876-89503.jpg');
+    }
+  button {
+      background-color: white;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 2px 2px;
+      cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+<div class="todos">
+  <header class="text-center">
+    <h1 style="color: white">My Todo's list</h1>
+  </header>
+
+  <form class="form">
+    <div class="row mt-20">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Enter your todo's list" name="todo" [(ngModel)]="todo">
+      </div>
+    </div>
+    <div class="row mt-20">
+      <div class="col">
+        <input type="datetime-local" class="form-control" id="tasktime" [(ngModel)]="time" name="time">
+      </div>
+    </div>
+    <!-- </div> -->
+    <div class="row mt-20">
+      <div class="col">
+        <button type="button" class="btn btn-success" (click)="saveTodo()">Save Task</button>
+      </div>
+    </div>
+  </form>
+
+  <div style="color: white" class="todo-list mt-20">
+    <ul class="todo-list list-card">
+      <li class="list-item-card pt-10" *ngFor="let todo of todos;let i=index" [class.completed]="todo.completed">
+        <div class="view">
+          <input class="toggle mr-10" type="checkbox" (click)="toggleTodoComplete(i)" [checked]="todo.completed">
+          <label class="mr-10">{{todo.name}}</label>
+          <span *ngIf="countDownTimes[i]">
+                    <button class="btn btn-primary mr-10">{{countDownTimes[i]?.days + 'd'}}</button>
+                    <button class="btn btn-primary mr-10">{{countDownTimes[i]?.hours + 'h'}}</button>
+                    <button class="btn btn-primary mr-10">{{countDownTimes[i]?.minutes + 'm'}}</button>
+                    <button class="btn btn-primary mr-10">{{countDownTimes[i]?.seconds + 's'}}</button>
+                </span>
+          <button class="btn btn-danger delete mr-10" (click)="removeTodo(i)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
