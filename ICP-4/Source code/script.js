@@ -1,6 +1,5 @@
-function getGithubInfo(user) {
-    //1. Create an instance of XMLHttpRequest class and send a GET request using it.
-    // The function should finally return the object(it now contains the response!)
+function GitInfo(user) {
+    //1. Creating an instance of XMLHttpRequest class and sending a GET request.
     var username='https://api.github.com/users/'+user;
     console.log(username);
     $.ajax({
@@ -10,27 +9,21 @@ function getGithubInfo(user) {
 
     }).done(function(data){
         showUser(data);
-
-    }).fail(function(){
-        console.log("Some error Happened");
-        noSuchUser(user);
     });
-
 }
 
 function showUser(user) {
-    //2. set the contents of the h2 and the two div elements in the div '#profile' with the user content
-    document.getElementById('imgavg').src=user.avatar_url;
-    document.getElementById('txtname').innerText=user.name;
-    document.getElementById('txtid').innerText=user.id;
-    document.getElementById('txturl').href=user.url;
-    document.getElementById('txturl').innerText=user.html_url;
-    document.getElementById('txtrepository').innerText=user.public_repos;
+    //2. Setting the contents of h2 in html page by adding profile
+    document.getElementById('imgref').src=user.avatar_url;
+    document.getElementById('textname').innerText=user.name;
+    document.getElementById('id_text').innerText=user.id;
+    document.getElementById('url_text').href=user.url;
+    document.getElementById('url_text').innerText=user.html_url;
+    document.getElementById('repository_text').innerText=user.public_repos;
     document.getElementById('followers').innerText=user.followers;
     document.getElementById('following').innerText=user.following;
 }
 function noSuchUser(username) {
-    //3. set the elements such that a suitable message is displayed
     if(data.message == "Not Found" || username == '') {
         alert("User not found");
     }
@@ -44,7 +37,7 @@ $(document).ready(function () {
             //reset the text typed in the input
             $(this).val("");
             //get the user's information and store the respsonse
-            getGithubInfo(username);
+            GitInfo(username);
             //if the response is successful show the user's details
 
         }
