@@ -1,0 +1,66 @@
+<div class="parent-container">
+  <div class="child-container">
+    <h2><b>Aren't you hungry?
+    </b>
+    <b>What are you waiting for
+    </b></h2><br>
+    <form>
+      <div class="form-group">
+        <div class="form-group col-lg-8 col-lg-offset-2 inputs">
+          <input style="font-family: 'Imprint MT Shadow'; font-size: 25px" #recipe class="form-control" placeholder="Enter the recipe name" type="text">
+<!--          <span class="input-group-addon">-</span>-->
+          <input style="font-family: 'Imprint MT Shadow';font-size: 25px" #place class="form-control" placeholder="NearBy Place" type="text">
+<!--          <span class="input-group-addon">-</span>-->
+          <button style="color: black" (click)="getVenues()" class="btn btn-secondary col-lg-2 col-lg-offset-5 " type="button">Go</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="panel panel-default col-6">
+        <div style="font-family: 'Imprint MT Shadow'; font-size: 25px" class="panel-heading"><b>How to make</b></div>
+        <div class="panel-body">
+          <div *ngFor="let recipe of recipeList" class="list-group-item clearfix">
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
+              <a href="{{recipe.url}}" class="list-group-item-text">{{ recipe.url }}</a>
+            </div>
+
+            <span class="pull-right">
+          <img src="{{recipe.icon}}" style="width: 70px; height: 50px;" align="center"/>
+
+      </span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="panel panel-default col-6">
+        <div style="font-family: 'Imprint MT Shadow'; font-size: 25px" class="panel-heading"><b>Where to get</b></div>
+        <div class="panel-body">
+
+          <div *ngFor="let venue of venueList" class="list-group-item clearfix">
+            <div class="pull-left">
+              <h4 class="list-group-item-heading">{{ venue.name }}</h4>
+            </div>
+
+            <span class="pull-right">
+             <a href="http://maps.google.com/maps?saddr={{currentLat}},{{currentLong}}
+             &daddr={{venue.location.formattedAddress[0]}},{{venue.location.formattedAddress[1]}},{{venue.location.formattedAddress[2]}}">
+               <img src="../../assets/google.png" style="width: 30px; height: 30px;"></a>
+      </span>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
