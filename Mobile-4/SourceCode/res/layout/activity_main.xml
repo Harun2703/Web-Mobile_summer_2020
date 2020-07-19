@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="MainActivity">
+
+    <Button
+        android:id="@+id/DisplayLoc"
+        android:layout_width="381dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="30dp"
+        android:background="#3B89FF"
+        android:onClick="LocationDetails"
+        android:text="Locate me!!" />
+
+    <Button
+        android:id="@+id/TakePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DisplayLoc"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginRight="30dp"
+        android:background="#3B5CFF"
+        android:onClick="takePhoto"
+        android:text=" Take a Photo" />
+
+    <Button
+        android:id="@+id/Record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TakePhoto"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="30dp"
+        android:background="#3B89FF"
+        android:onClick="recordVoice"
+        android:text="Record my Voice" />
+
+    <Button
+        android:id="@+id/Storage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Record"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginRight="30dp"
+        android:background="#3B73FF"
+        android:onClick="saveData"
+        android:text="Notepad" />
+
+
+</RelativeLayout>
